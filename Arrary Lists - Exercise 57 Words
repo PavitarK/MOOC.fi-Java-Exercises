@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.*;
+
+
+public class Tasks {
+
+    public static void words(){
+        ArrayList<String> words = new ArrayList<String>();
+
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Input words, when you're done hit enter");
+
+        String str = "garbage";
+
+        while(!str.isEmpty()){
+            words.add(str = userInput.nextLine());
+        }
+        
+        System.out.println(words.size());
+
+        System.out.println("Seems like you're done");
+        for(String j : words) {
+            System.out.println(j);
+        }
+
+    }
+
+}
