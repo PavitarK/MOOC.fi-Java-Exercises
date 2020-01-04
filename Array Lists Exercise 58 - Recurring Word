@@ -1,0 +1,61 @@
+import java.util.Scanner;
+import java.util.*;
+
+//Two different solutions 
+
+///Solution 1///
+
+ public static void recurringWord(){
+        ArrayList<String> words = new ArrayList<String>();
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Input words, when you're done re-enter the last word in your list");
+
+        String str1 ="garbage";
+        String str2= "";
+        int index = 1;
+        words.add(str1= userInput.nextLine());
+        words.add(str2 = userInput.nextLine());
+
+        while(!str1.equals(str2)) {
+           words.add(userInput.nextLine());
+           str1 = words.get(index);
+           str2 = words.get(index+1);
+           index++;
+        }
+
+        System.out.println("Seems like you're done");
+        for(String j : words) {
+            System.out.println(j);
+        }
+
+
+    }
+    
+ ////Solution 2////
+     public static void recurringWordSolution2(){
+
+        ArrayList<String> words = new ArrayList<String>();
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Input words, when you're done re-enter the last word in your list");
+
+//need atleast two inputs before user can end the list
+
+        words.add(userInput.nextLine());
+        words.add(userInput.nextLine());
+
+//while the contents of index size-1 and size (ie. the last and second last columns of the arraylist) 
+//are NOT equal, continue asking for user input
+
+        while(!words.get(words.size()-2).equals(words.get(words.size()-1))) {
+            words.add(userInput.nextLine());
+        }
+
+        System.out.println("Seems like you're done");
+        for(String j : words) {
+            System.out.println(j);
+        }
+
+
+    }
+
+    
